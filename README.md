@@ -31,10 +31,10 @@
 typedef void (^OCTCustomBlock) (NSInteger num);
 
 //  默认类型的支持
-OCTAutoDefineBlock(Test)
+auto_declare_block(Test)
 
 //  添加对自定义类型的支持
-OCTDefineBlockNoAsterisk(Test, OCTCustomBlock)
+declare_block_no_asterisk(Test, OCTCustomBlock)
 
 @interface Test : NSObject
 
@@ -45,18 +45,18 @@ OCTDefineBlockNoAsterisk(Test, OCTCustomBlock)
 //  声明方法
 ///  ClassName PropertyType propertyName
 
-OCTDefineMethod(Test, NSString, string)
-OCTDefineMethod(Test, NSInteger, num)
-OCTDefineMethod(Test, OCTCustomBlock, code)
+declare_method(Test, NSString, string)
+declare_method(Test, NSInteger, num)
+declare_method(Test, OCTCustomBlock, code)
 
 @end
 
 @implementation Test
 
 //  方法实现
-OCTImplementMethodNoAsterisk(Test, NSInteger, num)
-OCTImplementMethodWithAsterisk(Test, NSString, string)
-OCTImplementMethodNoAsterisk(Test, OCTCustomBlock, code)
+imp_method_no_asterisk(Test, NSInteger, num)
+imp_method_asterisk(Test, NSString, string)
+imp_method_no_asterisk(Test, OCTCustomBlock, code)
 
 @end
 
